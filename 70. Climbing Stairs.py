@@ -1,4 +1,3 @@
-```python 
 
 class Solution:
     def climbStairs(self, n):
@@ -22,6 +21,4 @@ class Solution:
     
         return array[n] 
 
-        
-        
-```
+       
