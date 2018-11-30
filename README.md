@@ -1,2 +1,2 @@
 # LeetCode_Solution
-![alt text](https://www.memesmonkey.com/topic/copy+and+paste+art#&gid=1&pid=8)
+![](https://www.memesmonkey.com/images/memesmonkey/9a/9ac905d08e6b392332478c623ef7f4f9.png)
