@@ -17,6 +17,9 @@ class Solution:
         #if the linked list becomes [dummy, 1,2], now counter can go to 2, and becomes dummy.next = dummy. next . next
         #ie, becomes [dummy, 2], the 1 get successfully deleted 
         
+        
+        #ie, if there is a dummy node, then we are always deleting the middle node, which makes life easier
+        #otherwise there will be two separate conditions: when the node to delete is in middle and when the node to delete is header 
         dummy = ListNode(0)
         dummy.next = head
         node = node2 = dummy
