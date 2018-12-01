@@ -1,0 +1,67 @@
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+
+        #create a dictionary, where the key is the number and value is the index
+        #reason for the dictionary
+        #so can check whether 9-2 = 7 , the 7, exists in dictionary , without performing double loop 
+        #also, can retrieve the index efficiently 
+        
+        dictionary = {}
+        for index, number in enumerate(nums): #eg, [3,3], sum to 6. Same number, multiple index, so need to store index as list , instead of storing as a single index. 
+            if number in dictionary:
+                dictionary[number].append(index) #if the number appear for the second time , add this to the 
+            else:
+                dictionary[number] = [index] #if see the number for the first time, create the list 
+
+                
+        for i in dictionary.keys(): #go through all the numbers 
+            remainder = target - i #calculate the remainder of each number, if this remainder in the table, return indexes of both number 
+            if remainder in dictionary.keys():
+                if i == remainder:
+                    return [ dictionary[i][0],  dictionary[i][1]]
+                else:
+                    return [dictionary[i][0],dictionary[remainder][0]]
+                
+         
+        
+        
+        def twoSum(self, nums, target):
+            dictionary = {}
+            
+            #loop through all the numbers
+            for i in range(len(nums)):
+                remainder = target - nums[i] #the remainder = target - the numbers iterating through 
+                if remainder in dictionary: #if the remainder is already in the table 
+                    return [dictionary[remainder], i] #if [3,3], sum 6, then return the index of both 
+                else:
+                    dictionary[nums[i]] = i       #if the remainder is not already in the table
+                                                 #then put the key value pair in the table
+                        
+                        
+            #eg, 1,2,3,4,5 , sum = 8
+            #first getting at 1
+            # 7 = 8 - 1
+            #because the 7 is not in the table yet
+            #put in the 1 into the table
+            
+            #then get 2
+            #6 = 8 - 2
+            #6 not in the table yet, put 2 into the table
+            
+            #then get 3
+            #5 = 8 - 3
+            #3 not in the table, put 3 
+            
+            #get 4
+            #4 = 8 - 4 ,
+            #put 4 in the table
+            
+            #get 5 
+            #3 = 8 - 5
+            #3 already in the table, this must be number looking for 
+
